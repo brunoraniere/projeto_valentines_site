@@ -1,0 +1,21 @@
+{
+  "name": "projeto_g_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "grunt": "grunt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-sass": "^3.1.0",
+    "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.62.1"
+  }
+}
