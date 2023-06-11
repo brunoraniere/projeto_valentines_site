@@ -23,6 +23,7 @@ body{
      letter-spacing: 2px;
      height: calc(100vh); 
      position: relative;
+     overflow: hidden;
 }
 
 img{
@@ -226,8 +227,113 @@ section{
 
      &#page8{
           display: none;
+          padding: 0;
+
+               h1{
+                    display: block;
+                    z-index: 2;
+                    position: absolute;
+                    left: 50%;
+                    top: 180px;
+                    transform: translateY(30%) translateX(-50%);
+                    width: 100%;
+                    text-align: center;
+               }
+
+               p{
+                    display: block;
+                    z-index: 2;
+                    position: absolute;
+                    left: 50%;
+                    top: 180px;
+                    transform: translateX(-50%);
+                    width: 90%;
+                    text-align: center;
+               }
+
+               button{
+                    @include buttonSettings();
+                    display: none;
+                    font-size: 1em;
+                    bottom: 80px;
+                    width: 90%
+               }
+     
+               canvas {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+               }
+     
+               #drumEffect {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    pointer-events: none;
+               }
+     
+               .circleTambor {
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    pointer-events: none;
+                    animation: drumEffectAnim 0.5s ease-out forwards;
+               }
+     
+               @keyframes drumEffectAnim {
+                    0% {
+                         transform: scale(0);
+                         opacity: 1;
+                    }
+                    100% {
+                         transform: scale(3);
+                         opacity: .1;
+                    }
+               }
+          }
+
+     &#page9{
+          display: none;
+          padding: 0;
+
+          #canvasHeart {
+               display: block;
+               position: absolute;
+               float: inline-start;
+               top: 0;
+               left: 0;
+          }
+
+          .container{
+               position: absolute;
+               left: 5%;
+               top: 160px;
+               width: 90%;
+
+               p{
+                    display: block;
+                    font-weight: bold;
+               }
+               button{
+                    display: block;
+                    z-index: 2;
+                    position: absolute;
+                    left: 50%;
+                    top: 420px;
+                    transform: translateY(30%) translateX(-50%);
+                    width: 100%;
+                    text-align: center;
+                    font-size: 4.5em;
+               }
+          }
      }
 }
+
 
 .colors-btn{
      @include coloredButtonSettings();
@@ -394,6 +500,33 @@ footer{
      
           &.footer-c4{
                background-color: #FFF7B3;
+          }
+     }
+}
+
+#footer-red{
+     @include coloredButtonSettings();
+     height: 15px;
+     display: none;
+     border-top: .5px solid #151515;
+
+     span{
+          width: 25%;
+
+          &.footer-c1{
+               background-color: #FF3333;
+          }
+     
+          &.footer-c2{
+               background-color: #FF4C4C;
+          }
+     
+          &.footer-c3{
+               background-color: #FF6666;
+          }
+     
+          &.footer-c4{
+               background-color: #FF7F7F;
           }
      }
 }

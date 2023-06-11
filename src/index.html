@@ -7,7 +7,7 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="../dist/styles/main.min.css">
+     <link rel="stylesheet" href="@@ENDERECO_DO_CSS">
      <title>Happy valentine's day</title>
 </head>
 <body>
@@ -97,7 +97,22 @@
           </div>
      </section>
      <section id="page8">
-          
+          <canvas id="myCanvas">
+          </canvas>
+          <div id="drumEffect"></div>
+          <p id="phrases-p8">click anywhere</p>
+          <button id="continue-button-page8" type="button">
+               if you are bored, click to skip
+          </button>
+
+     </section>
+     <section id="page9">
+          <canvas id="canvasHeart"></canvas>
+          <div class="container">
+               <p>girl, i know this is not too much</p>
+               <p>but there is no better way to show how much I care for you than say...</p>
+               <button id="btn-end">사랑해요</button>
+          </div>
      </section>
      <div id="footer-purple">
           <span class="footer-c1"></span>
@@ -123,6 +138,12 @@
           <span class="footer-c3"></span>
           <span class="footer-c4"></span>
      </div>
+     <div id="footer-red">
+          <span class="footer-c1"></span>
+          <span class="footer-c2"></span>
+          <span class="footer-c3"></span>
+          <span class="footer-c4"></span>
+     </div>
      <footer>
           <span class="footer-red"></span>
           <span class="footer-blue"></span>
@@ -130,6 +151,6 @@
           <span class="footer-yellow"></span>
      </footer>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-     <script src="scripts/main.js"></script>
+     <script src="@@ENDERECO_DO_JS"></script>
 </body>
 </html>
