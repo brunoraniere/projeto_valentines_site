@@ -11,6 +11,14 @@ const endButton = document.querySelector('#btn-end');
 const body = document.querySelector('body');
 const containerMain = document.querySelector('.container-main');
 
+const titleMain = document.querySelector('#title-main');
+const titlePage2 = document.querySelector('#title-page2');
+const phrase1 = document.querySelector('#phrase1');
+const phrase2 = document.querySelector('#phrase2');
+const phrase1Page2 = document.querySelector('#phrase1-page2');
+const phrase2Page2 = document.querySelector('#phrase2-page2');
+const phrase3Page2 = document.querySelector('#phrase3-page2');
+const phrase4Page2 = document.querySelector('#phrase4-page2');
 const phrase1Page4 = document.querySelector('#phrase1-page4');
 const phrase3Page4 = document.querySelector('#phrase3-page4');
 const phrase1Page5 = document.querySelector('#phrase1-page5');
@@ -106,7 +114,11 @@ const phrasesLoveP8 = [
      'I love you for simply being you'
 ];
 
-yesButton.addEventListener('click', function() { //yesbutton
+typeWriter(titleMain, 30, function(){
+     typeWriter(yesButton, 20, function(){})
+})
+
+containerMain.addEventListener('click', function() { //yesbutton
      // Obter as dimensões do elemento sectionMain
      let containerWidth = containerMain.clientWidth;
      let containerHeight = containerMain.clientHeight - 131;
@@ -133,15 +145,13 @@ yesButton.addEventListener('click', function() { //yesbutton
      yesButton.style.left = randomLeft + 'px';
      yesButton.style.bottom = randomBottom + 'px';
 
-     if(countClicks == 8){
-          phrasesMain = document.querySelectorAll('p');
-
-          phrasesMain.forEach(function(phrasesMain){
-               phrasesMain.style.display = 'block';
-          });
-
+     if(countClicks == 1){
           yesButton.style.display = 'none';
-          contP1Button.style.display = 'inline';
+          typeWriter(phrase1, 20, function(){
+               typeWriter(phrase2, 20, function(){
+                    typeWriter(contP1Button, 20, function(){})
+               })
+          });
      }
 });
 
@@ -149,14 +159,26 @@ contP1Button.addEventListener('click', function(){
      sectionMain.style.display = 'none';
      sectionPage2.style.display = 'block';
      footer.style.display = 'none';
+     typeWriter(titlePage2, 50, function(){
+          typeWriter(phrase1Page2, 20, function(){
+               typeWriter(phrase2Page2, 20, function(){
+                    typeWriter(phrase3Page2, 20, function(){
+                         typeWriter(phrase4Page2, 20, function(){
+                              typeWriter(contP2Button, 20, function(){})
+                         })
+                    })
+               })
+          });
+     });
      footerPurple.style.display = 'flex';
-});
+})
 
 contP2Button.addEventListener('click', function(){
      sectionPage2.style.display = 'none';
      sectionPage3.style.display = 'flex';
      coloredButtons.style.display = 'flex';
      footerPurple.style.display = 'none';
+     footer.style.display = 'none';
 })
 
 contP3Button.addEventListener('click', function(){
@@ -567,3 +589,18 @@ function update() {
 }
 
 update();
+
+function typeWriter(element, timeTyping, callback){
+     const textArray = element.innerHTML.split('');
+     element.innerHTML = '';
+     element.style.display = 'block';
+     textArray.forEach((letter, indexLetter) => {
+          setTimeout(() => {
+               element.innerHTML += letter;
+               if (indexLetter == textArray.length - 1){
+                    console.log('working');
+                    callback();
+               }
+          }, timeTyping * indexLetter);
+     });
+}

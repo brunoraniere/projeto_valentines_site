@@ -34,6 +34,10 @@ img{
      margin: 65px auto;
 }
 
+button{
+     display: none;
+}
+
 .container{
      max-width: 90%;
      margin: 0 auto;
@@ -63,7 +67,7 @@ section{
                     font-size: 1.6em;
                     display: none;
                     position: absolute;
-                    top: 75%;
+                    top: 60%;
                     left: 50%;
                     transform: translateX(-50%) translateY(-50%);
                }
@@ -71,6 +75,7 @@ section{
 
           button{
                &#yes{
+                    display: none;
                     width: 86.42px;
                     padding: 10px;
                     @include buttonSettings();
@@ -78,20 +83,27 @@ section{
 
                &#sure{
                     display: none;
-                    width: 100%;
+                    width: 250px;
                     @include buttonSettings();
+                    bottom: 50px;
                }
           }
      }
 
      &#page2{
-          display: none; //none
+          display: block; //none
           color: #8400ff;
+
+          h1{
+               display: none;
+          }
+
           p{
-               display: block;
+               display: none;
           }
 
           button{
+               display: block;
                @include buttonSettings();
                color: #8400ff;
           }
