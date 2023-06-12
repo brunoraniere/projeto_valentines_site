@@ -71,11 +71,23 @@ const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
 let vh = document.documentElement.clientHeight;
+let vw = document.documentElement.clientWidth;
 html.style.height = vh + 'px';
+html.style.width = vw + 'px';
+body.style.height = vh + 'px';
+body.style.width = vw + 'px';
 
 window.addEventListener('resize', () => {
      vh = document.documentElement.clientHeight;
+     vw = document.documentElement.clientWidth;
      html.style.height = vh + 'px';
+     html.style.width = vw + 'px';
+     body.style.height = vh + 'px';
+     body.style.width = vw + 'px';
+     canvasHeart.width = window.innerWidth;
+     canvasHeart.height = window.innerHeight;
+     canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight;     
 });
 
 let countClicks = 0;

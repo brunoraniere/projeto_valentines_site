@@ -16,13 +16,17 @@
      width: 100%;
 }
 
+html{
+     position: relative;
+}
+
 body{
      background-color: #151515;
      color: #eee;
      font-family: 'Roboto Mono', monospace;
      letter-spacing: 2px;
-     position: relative;
-     height: 100%;
+     left: 0;
+     top: 0;
      overflow: hidden;
 }
 
@@ -49,6 +53,7 @@ img{
 section{
      display: none;
      padding: 80px 0;
+     height: 100%;
 
      p{
           display: none; //none
@@ -116,8 +121,8 @@ section{
           flex-direction: column;
           justify-content: space-between;
           text-align: center;
-          height: calc(100vh - 100px);
           padding: 0;
+          height: calc(100% - 100px);
 
           .colors{
                display: flex;
