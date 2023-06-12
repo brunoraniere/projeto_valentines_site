@@ -48,6 +48,7 @@ img{
      height: calc(100vh - 160px);
      text-align: center;
      position: relative;
+     background-color: red;
 }
 
 section{
@@ -85,14 +86,18 @@ section{
                     display: none;
                     width: 86.42px;
                     padding: 10px;
-                    @include buttonSettings();
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 2.5em;
+                    height: 63px;
                }
 
                &#sure{
                     display: none;
                     width: 250px;
-                    @include buttonSettings();
-                    bottom: 50px;
+                    font-size: 2.5em;
                }
           }
      }
