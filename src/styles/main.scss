@@ -98,7 +98,7 @@ section{
 
      &#page2{
           display: none; //none
-          color: #8400ff;
+          color: #A57AFF;
 
           h1{
                display: none;
@@ -111,7 +111,7 @@ section{
           button{
                display: none;
                @include buttonSettings();
-               color: #8400ff;
+               color: #A57AFF;
           }
      }
 

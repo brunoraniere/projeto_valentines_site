@@ -94,16 +94,15 @@ let countClicks = 0;
 
 const phrasesLoveP8 = [
      'I love the way you are easygoing',
-     'I love your beautiful smile',
+     'I love your smile',
      'I love the way you make me laugh',
      'I love how caring you are',
      'I love your humor',
-     'I love your warm heart',
+     'I love your warms hugs',
      'I love how supportive you are',
      'I love your adventurous way',
      'I love the way you light up a room',
      'I love your independence',
-     'I love your thoughtfulness',
      'I love your cooking skills',
      'I love your confidence',
      'I love your determination',
@@ -113,12 +112,11 @@ const phrasesLoveP8 = [
      'I love your laugh',
      'I love your natural beauty',
      'I love your loyalty',
-     'I love your sense of empathy',
-     'I love your ability to make me feel special',
+     'I love your  empathy',
+     'I love your way to make me feel special',
      'I love your love for animals',
-     'I love your willingness to try new things',
+     'I love your curiosity to try new things',
      'I love your confidence in yourself',
-     'I love your passion for the things you love',
      'I love your gestures that show you care',
      'I love your butt',
      'I love how you support me',
@@ -127,15 +125,9 @@ const phrasesLoveP8 = [
      'I love your playfulness that brings out my inner child',
      'I love your belief in me',
      'I love your ability to make me feel like the luckiest person alive',
-     'I love your honesty that builds trust between us',
-     'I love your kindness that extends to everyone you meet',
      'I love your ability to make the simplest moments feel special',
      'I love how hot you are',
-     'I love your ability to make me feel understood',
-     'I love your support that gives me the courage to persue my dreams',
-     'I love your ability to find beauty in the smallest of things',
      'I love your ability to make me feel at home wherever we are',
-     'I love your hugs that make everything better',
      'I love you for simply being you'
 ];
 
@@ -191,12 +183,10 @@ contP1Button.addEventListener('click', function(){
           typeWriter(titlePage2, 70, function(){
                typeWriter(phrase1Page2, 40, function(){
                     typeWriter(phrase2Page2, 40, function(){
-                         typeWriter(phrase3Page2, 40, function(){
-                              typeWriter(phrase4Page2, 40, function(){
-                                   typeWriter(contP2Button, 40, function(){})
-                              })
-                         })
-                    })
+                         typeWriter(phrase4Page2, 40, function(){
+                              typeWriter(contP2Button, 40, function(){})
+                         });
+                    });
                });
           });
      }, 2000);
@@ -254,8 +244,8 @@ contP6Button.addEventListener('click', function(){
 
 contP7Button.addEventListener('click', function(){
      setTimeout(function(){
-          typeWriter(phrasesP8, 40, function(){});
-     }, 1020);
+          typeWriter(phrasesP8, 50, function(){});
+     }, 1500);
 });
 
 contP8Button.addEventListener('click', function(){
@@ -330,8 +320,10 @@ $(document).ready(function(){
 
      $('#continue-button-page7').click(function(){
           $('#page7').slideUp(800);
-          $('#page8').delay(1010).show();
           $('#footer-yellow').slideUp(1000);
+          setTimeout(function(){
+               $('#page8').show();
+          }, 1010);
      });
 
      $('#continue-button-page8').click(function(){
@@ -598,11 +590,11 @@ function handleClick(e) {
 
      counterPhrasesLove++;
 
-     if(counterPhrasesLove == 5){
+     if(counterPhrasesLove == 4){
           typeWriter(contP8Button, 40, function(){});
      }
 
-     if(counterPhrasesLove >= 45){
+     if(counterPhrasesLove >= 34){
           counterPhrasesLove = 0;
      }
 
@@ -765,17 +757,3 @@ function typeWriter(element, timeTyping, callback){
           }, timeTyping * indexLetter);
      });
 }
-
-
-
-
-
-// contP3Button.addEventListener('click', function(){
-//      body.style.backgroundColor = '#eee';
-//      body.style.color = '#151515';
-//      // sectionPage3.style.display = 'none';
-//      // divP3Button.style.display = 'none';
-//      // sectionPage4.style.display = 'block';
-//      phrase3Page4.style.display = 'none';
-//      // footer.style.display = 'flex';
-// })

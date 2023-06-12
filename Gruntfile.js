@@ -18,7 +18,9 @@ module.exports = function(grunt){
                },
                html: {
                     files: './src/index.html',
-                    tasks: ['htmlmin:dist', 'replace:dist', 'clean', 'imagemin']
+                    tasks: ['htmlmin:dist', 'replace:dist', 'clean'
+                    // , 'imagemin'
+                    ]
                },
                javascript: {
                     files: './src/scripts/*.js',
