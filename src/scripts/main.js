@@ -24,6 +24,10 @@ const phrase3Page4 = document.querySelector('#phrase3-page4');
 const phrase1Page5 = document.querySelector('#phrase1-page5');
 const phrase2Page5 = document.querySelector('#phrase2-page5');
 const phrase3Page5 = document.querySelector('#phrase3-page5');
+const phrase1Page6 = document.querySelector('#phrase1-page6');
+const phrase1Page7 = document.querySelector('#phrase1-page7');
+const phrase1Page9 = document.querySelector('#phrase1-page9');
+const phrase2Page9 = document.querySelector('#phrase2-page9');
 const phrasesP8 = document.querySelector('#phrases-p8');
 
 const sectionMain = document.querySelector('#main');
@@ -64,6 +68,7 @@ const footerModel = document.querySelector('#footer-model');
 const footerGreen = document.querySelector('#footer-green');
 const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
+
 
 let countClicks = 0;
 
@@ -114,11 +119,13 @@ const phrasesLoveP8 = [
      'I love you for simply being you'
 ];
 
-typeWriter(titleMain, 30, function(){
-     typeWriter(yesButton, 20, function(){})
-})
+setTimeout(function(){
+     typeWriter(titleMain, 80, function(){
+          typeWriter(yesButton, 80, function(){})
+     });
+}, 2500);
 
-containerMain.addEventListener('click', function() { //yesbutton
+yesButton.addEventListener('click', function() { //yesbutton
      // Obter as dimensões do elemento sectionMain
      let containerWidth = containerMain.clientWidth;
      let containerHeight = containerMain.clientHeight - 131;
@@ -145,94 +152,179 @@ containerMain.addEventListener('click', function() { //yesbutton
      yesButton.style.left = randomLeft + 'px';
      yesButton.style.bottom = randomBottom + 'px';
 
-     if(countClicks == 1){
+     if(countClicks >= 1){
           yesButton.style.display = 'none';
-          typeWriter(phrase1, 20, function(){
-               typeWriter(phrase2, 20, function(){
-                    typeWriter(contP1Button, 20, function(){})
+          typeWriter(phrase1, 40, function(){
+               typeWriter(phrase2, 40, function(){
+                    typeWriter(contP1Button, 40, function(){})
                })
           });
      }
 });
 
+
+
 contP1Button.addEventListener('click', function(){
      sectionMain.style.display = 'none';
      sectionPage2.style.display = 'block';
-     footer.style.display = 'none';
-     typeWriter(titlePage2, 50, function(){
-          typeWriter(phrase1Page2, 20, function(){
-               typeWriter(phrase2Page2, 20, function(){
-                    typeWriter(phrase3Page2, 20, function(){
-                         typeWriter(phrase4Page2, 20, function(){
-                              typeWriter(contP2Button, 20, function(){})
+     setTimeout(function(){
+          typeWriter(titlePage2, 70, function(){
+               typeWriter(phrase1Page2, 40, function(){
+                    typeWriter(phrase2Page2, 40, function(){
+                         typeWriter(phrase3Page2, 40, function(){
+                              typeWriter(phrase4Page2, 40, function(){
+                                   typeWriter(contP2Button, 40, function(){})
+                              })
                          })
                     })
-               })
+               });
           });
-     });
-     footerPurple.style.display = 'flex';
+     }, 2000);
 })
 
 contP2Button.addEventListener('click', function(){
      sectionPage2.style.display = 'none';
      sectionPage3.style.display = 'flex';
-     coloredButtons.style.display = 'flex';
-     footerPurple.style.display = 'none';
-     footer.style.display = 'none';
 })
 
 contP3Button.addEventListener('click', function(){
-     body.style.backgroundColor = '#eee';
-     body.style.color = '#151515';
-     // body.style.height = 'calc(100vh - 80px)';
-     sectionPage3.style.display = 'none';
-     divP3Button.style.display = 'none';
-     sectionPage4.style.display = 'block';
-     phrase3Page4.style.display = 'none';
-     footer.style.display = 'flex';
+     setTimeout(function(){
+          sectionPage4.style.display = 'block';
+     }, 1050);
+     setTimeout(function(){
+          typeWriter(phrase1Page4, 40, function(){
+               typeWriter(tapButtonP4, 60, function(){});
+          });
+     }, 2500);
 })
 
 contP4Button.addEventListener('click', function(){
-     sectionPage4.style.display = 'none';
-     sectionPage5.style.display = 'block';
-     phrase2Page5.style.display = 'none';
-     phrase3Page5.style.display = 'none';
-     body.style.backgroundColor = '#151515';
-     body.style.color = '#eee';
-     footer.style.display = 'none';
-     footerModel.style.display = 'flex';
+     setTimeout(function(){
+          typeWriter(phrase1Page5, 40, function(){
+               typeWriter(tapButtonP5, 80, function(){})
+          })
+     }, 2000);
 });
 
 contP5Button.addEventListener('click', function(){
-     sectionPage5.style.display = 'none';
-     sectionPage6.style.display = 'block';
-     footerModel.style.display = 'none';
-     footerGreen.style.display = 'flex';
+     setTimeout(function(){
+          typeWriter(phrase1Page6, 40, function(){
+               $(document).ready(function(){
+                    $('#img-monkey').fadeIn(2000);
+               });
+               setTimeout(function(){
+                    typeWriter(contP6Button, 40, function(){})
+               }, 2010);
+          });
+     }, 2200);
 });
 
 contP6Button.addEventListener('click', function(){
-     sectionPage6.style.display = 'none';
-     sectionPage7.style.display = 'block';
-     footerGreen.style.display = 'none';
-     footerYellow.style.display = 'flex';
+     setTimeout(function(){
+          typeWriter(phrase1Page7, 40, function(){
+               $(document).ready(function(){
+                    $('#img-couple').fadeIn(2000);
+               });
+               setTimeout(function(){
+                    typeWriter(contP7Button, 40, function(){})
+               }, 2010);
+          });
+     }, 2200);
 });
 
 contP7Button.addEventListener('click', function(){
-     sectionPage7.style.display = 'none';
-     sectionPage8.style.display = 'block';
-     footerYellow.style.display = 'none';
-     footer.style.display = 'flex';
+     setTimeout(function(){
+          typeWriter(phrasesP8, 40, function(){});
+     }, 1020);
 });
 
 contP8Button.addEventListener('click', function(){
-     sectionPage8.style.display = 'none';
-     sectionPage9.style.display = 'block';
-     footerRed.style.display = 'flex';
-     body.style.backgroundColor = '#Fa8a8a';
+     setTimeout(function(){
+          typeWriter(phrase1Page9, 60, function(){
+               typeWriter(phrase2Page9, 60, function(){
+                    typeWriter(endButton, 500, function(){});
+               });
+          });
+     }, 1500);
 });
 
 endButton.addEventListener('click', function(){
      location.reload(true);
+});
+
+$(document).ready(function(){
+     $('footer').hide();
+     $('#footer-purple').hide();
+     $('#footer-model').hide();
+     $('#footer-green').hide();
+     $('#footer-yellow').hide();
+     $('#footer-red').hide();
+     $('.colors').hide();
+     $('footer').delay(1500).slideDown(1000);
+     $('.colors-btn').css('display', 'flex');
+     $('.colors-btn').hide();
+
+     $('#sure').click(function(){
+          $('footer').slideUp(800);
+          $('#footer-purple').delay(900).slideDown(1000);
+     });
+
+     //monster high
+     $('#continue-button-page2').click(function(){
+          $('#page2').slideUp(800);
+          $('#footer-purple').slideUp(800);
+          $('.colors-btn').delay(900).slideDown(1000);
+     });
+
+     //cores
+     $('#continue-button-page3').click(function(){
+          $('body').css('backgroundColor', '#eee');
+          $('#page3').slideUp(1000);
+          $('#page4').css('backgroundColor', '#eee');
+          $('.continue-colored-btn').slideUp(1000);
+          $('footer').delay(1350).slideDown(1000);
+     });
+
+     //pag branca
+     $('#continue-button-page4').click(function(){
+          $('body').css('backgroundColor', '#151515');
+          $('#page4').slideUp(1000);
+          $('#page5').delay(1010).show();
+          $('footer').slideUp(800);
+          $('#footer-model').delay(1000).slideDown(1000);
+     });
+
+     $('#continue-button-page5').click(function(){
+          $('#page5').slideUp(800);
+          $('#page6').delay(4010).show();
+          $('#footer-model').slideUp(800);
+          $('#footer-green').delay(1000).slideDown(1000);
+     });
+
+     $('#continue-button-page6').click(function(){
+          $('#page6').slideUp(800);
+          $('#page7').delay(1010).show();
+          $('#footer-green').slideUp(800);
+          $('#footer-yellow').delay(1000).slideDown(1000);
+     });
+
+     $('#continue-button-page7').click(function(){
+          $('#page7').slideUp(800);
+          $('#page8').delay(1010).show();
+          $('#footer-yellow').slideUp(1000);
+     });
+
+     $('#continue-button-page8').click(function(){
+          $('#continue-button-page8').hide();
+          $('body').css('backgroundColor', '#Fa8a8a');
+          $('#page9').show();
+          $('#footer-red').slideDown(1000);
+     });
+
+     $('#tap-button-p5').click(function(){
+          $('#phrase1-page5').hide();
+          $('#tap-button-p5').hide();
+     });
 });
 
 let switchRed = false;
@@ -256,12 +348,16 @@ btnRed.addEventListener('click', function(){
      switchRed = !switchRed;
      switch (switchRed) {
           case true: 
-          divRed.style.display = 'flex';
+          $(document).ready(function(){
+               $('.color1').slideDown(1000);
+          });
           btnRed.style.backgroundColor = '#ee5253';
           break;
           case false:
-               divRed.style.display = 'none';
-               btnRed.style.backgroundColor = '#ff6b6b';
+          $(document).ready(function(){
+               $('.color1').slideUp(1000);
+          });
+          btnRed.style.backgroundColor = '#ff6b6b';
           break;
      }
 
@@ -272,11 +368,15 @@ btnBlue.addEventListener('click', function(){
      switchBlue = !switchBlue;
      switch (switchBlue) {
           case true: 
-          divBlue.style.display = 'flex';
+          $(document).ready(function(){
+               $('.color2').slideDown(1000);
+          });
           btnBlue.style.backgroundColor = '#0abde3';
           break;
           case false:
-               divBlue.style.display = 'none';
+               $(document).ready(function(){
+                    $('.color2').slideUp(1000);
+               });
                btnBlue.style.backgroundColor = '#48dbfb';
           break;
      }
@@ -288,11 +388,15 @@ btnGreen.addEventListener('click', function(){
      switchGreen = !switchGreen;
      switch (switchGreen) {
           case true: 
-          divGreen.style.display = 'flex';
+          $(document).ready(function(){
+               $('.color3').slideDown(1000);
+          });
           btnGreen.style.backgroundColor = '#10ac84';
           break;
           case false:
-               divGreen.style.display = 'none';
+               $(document).ready(function(){
+                    $('.color3').slideUp(1000);
+               });
                btnGreen.style.backgroundColor = '#1dd1a1';
           break;
      }
@@ -304,11 +408,15 @@ btnYellow.addEventListener('click', function(){
      switchYellow = !switchYellow;
      switch (switchYellow) {
           case true: 
-          divYellow.style.display = 'flex';
+          $(document).ready(function(){
+               $('.color4').slideDown(1000);
+          });
           btnYellow.style.backgroundColor = '#ff9f43';
           break;
           case false:
-               divYellow.style.display = 'none';
+               $(document).ready(function(){
+                    $('.color4').slideUp(1000);
+               });
                btnYellow.style.backgroundColor = '#feca57';
           break;
      }
@@ -318,18 +426,28 @@ btnYellow.addEventListener('click', function(){
 
 tapButtonP4.addEventListener('click', function(){
      tapButtonP4.style.display = 'none';
-     phrase3Page4.style.display = 'block';
-     imgDress.style.display = 'block';
-     contP4Button.style.display = 'block';
+     $(document).ready(function(){
+          $('#img-dress').fadeIn(2000);
+     });
+     setTimeout(function(){
+          typeWriter(phrase3Page4, 40, function(){
+               typeWriter(contP4Button, 40, function(){})
+          });
+     }, 2000);
+
 });
 
 tapButtonP5.addEventListener('click', function(){
-     phrase1Page5.style.display = 'none';
-     tapButtonP5.style.display = 'none';
-     imgModel.style.display = 'block';
-     phrase2Page5.style.display = 'block';
-     phrase3Page5.style.display = 'block';
-     contP5Button.style.display = 'block';
+     typeWriter(phrase2Page5, 40, function(){
+          $(document).ready(function(){
+               $('#img-model').fadeIn(2000);
+          });
+          setTimeout(function(){
+               typeWriter(phrase3Page5, 40, function(){
+                    typeWriter(contP5Button, 60, function(){});
+               });
+          }, 2010);
+     });
 });
 
 var canvas = document.getElementById('myCanvas');
@@ -379,7 +497,7 @@ function Circle(x, y, color) {
      this.colorCircle = color;
      this.diameterCircle = 50;
      this.maxDiameterCircle = Math.max(canvas.width, canvas.height) * 2;
-     this.speedCircle = 12;
+     this.speedCircle = 10;
 }
 
 function Particle(x, y, size, color, speedX, speedY) {
@@ -454,12 +572,14 @@ function handleClick(e) {
 
      footer.style.display = 'none';
 
+     phrasesP8.style.display = 'block';
      phrasesP8.innerHTML = phrasesLoveP8[counterPhrasesLove];
+     typeWriter(phrasesP8, 15, function(){});
 
      counterPhrasesLove++;
 
-     if(counterPhrasesLove >= 3){
-          contP8Button.style.display = 'block';
+     if(counterPhrasesLove == 5){
+          typeWriter(contP8Button, 40, function(){});
      }
 
      if(counterPhrasesLove >= 45){
@@ -468,9 +588,8 @@ function handleClick(e) {
 
      phrasesP8.style.display = 'block';
 
-     createCircleTambor(x, y);
+     createCircleTambor(x, y, colorsLight[index]);
      createParticles(x, y, colorsLight[index]);
-     // createCircleTambor(x, y, colorsLight[index]);
 
      index++;
      if(index>=10){
@@ -479,6 +598,28 @@ function handleClick(e) {
 
      // Cria um novo objeto Circle com as coordenadas do clique e uma cor aleatória
      var circle = new Circle(x, y, colorsBackground[index]);
+     circles.push(circle);
+
+     console.log(circles.length);
+
+     if(circles.length >= 10){
+          circles.splice(0, 1);
+     }
+}
+
+function handleClickHeart(e) {
+     var x = e.clientX;
+     var y = e.clientY;
+
+     footer.style.display = 'none';
+     phrasesP8.style.display = 'none';
+
+     createCircleTambor(x, y, '#ee0000');
+     createParticles(x, y, '#ee0000');
+
+
+     // Cria um novo objeto Circle com as coordenadas do clique e uma cor aleatória
+     var circle = new Circle(x, y, '#Fa8a8a');
      circles.push(circle);
 
      console.log(circles.length);
@@ -507,15 +648,16 @@ animate();
 // Adiciona um ouvinte de evento para capturar o clique do mouse
 canvas.addEventListener('mousedown', handleClick);
 phrasesP8.addEventListener('mousedown', handleClick);
+contP8Button.addEventListener('mousedown', handleClickHeart);
 
 var drumEffect = document.getElementById('drumEffect');
 
-function createCircleTambor(x, y) {
+function createCircleTambor(x, y, color) {
      var circleTambor = document.createElement('div');
      circleTambor.className = 'circleTambor';
      circleTambor.style.left = (x - 50) + 'px';
      circleTambor.style.top = (y - 50) + 'px';
-     circleTambor.style.backgroundColor = colorsLight[index];
+     circleTambor.style.backgroundColor = color;
      drumEffect.appendChild(circleTambor);
      
      // Remove o círculo após a animação
@@ -598,9 +740,22 @@ function typeWriter(element, timeTyping, callback){
           setTimeout(() => {
                element.innerHTML += letter;
                if (indexLetter == textArray.length - 1){
-                    console.log('working');
                     callback();
                }
           }, timeTyping * indexLetter);
      });
 }
+
+
+
+
+
+// contP3Button.addEventListener('click', function(){
+//      body.style.backgroundColor = '#eee';
+//      body.style.color = '#151515';
+//      // sectionPage3.style.display = 'none';
+//      // divP3Button.style.display = 'none';
+//      // sectionPage4.style.display = 'block';
+//      phrase3Page4.style.display = 'none';
+//      // footer.style.display = 'flex';
+// })

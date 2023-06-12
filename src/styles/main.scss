@@ -26,16 +26,16 @@ body{
      overflow: hidden;
 }
 
+button{
+     display: none;
+}
+
 img{
      display: none;
      width:  100%;
      margin-top: 60px;
      border-radius: 5px;
      margin: 65px auto;
-}
-
-button{
-     display: none;
 }
 
 .container{
@@ -47,6 +47,7 @@ button{
 }
 
 section{
+     display: none;
      padding: 80px 0;
 
      p{
@@ -57,6 +58,7 @@ section{
      h1{
           font-size: 2em;
           margin-bottom: 45px;
+          display: none;
      }
      
      &#main{
@@ -91,7 +93,7 @@ section{
      }
 
      &#page2{
-          display: block; //none
+          display: none; //none
           color: #8400ff;
 
           h1{
@@ -103,7 +105,7 @@ section{
           }
 
           button{
-               display: block;
+               display: none;
                @include buttonSettings();
                color: #8400ff;
           }
@@ -132,22 +134,22 @@ section{
                }
 
                &.color1{
-                    display: none;
+                    display: flex;
                     background-color: #ee5253;
                }
 
                &.color2{
-                    display: none;
+                    display: flex;
                     background-color: #0abde3;
                }
 
                &.color3{
-                    display: none;
+                    display: flex;
                     background-color: #10ac84;
                }
 
                &.color4{
-                    display: none;
+                    display: flex;
                     background-color: #ff9f43;
                }
 
@@ -164,10 +166,7 @@ section{
 
           p{
                display: none;
-
-               &#phrase1-page4{
-                    display: block;
-               }
+               color: #151515;
           }
 
           img{
@@ -176,6 +175,7 @@ section{
           }
 
           button{
+               display: none;
                @include buttonSettings();
                color: #151515;
 
@@ -192,12 +192,13 @@ section{
                display: none;
 
                &#phrase1-page5{
-                    display: block;
+                    display: none;
                }
           }
 
           button{
                @include buttonSettings();
+               display: none;
                
                &#continue-button-page5{
                     display: none;
@@ -209,14 +210,15 @@ section{
           display: none;
 
           p{
-               display: block;
+               display: none;
           }
 
           img{
-               display: block;
+               display: none;
           }
 
           button{
+               display: none;
                @include buttonSettings();
           }
      }
@@ -225,14 +227,15 @@ section{
           display: none;
 
           p{
-               display: block;
+               display: none;
           }
 
           img{
-               display: block;
+               display: none;
           }
           
           button{
+               display: none;
                @include buttonSettings();
           }
      }
@@ -241,73 +244,77 @@ section{
           display: none;
           padding: 0;
 
-               h1{
-                    display: block;
-                    z-index: 2;
-                    position: absolute;
-                    left: 50%;
-                    top: 180px;
-                    transform: translateY(30%) translateX(-50%);
-                    width: 100%;
-                    text-align: center;
-               }
+          h1{
+               display: none;
+               z-index: 2;
+               position: absolute;
+               left: 50%;
+               top: 180px;
+               transform: translateY(30%) translateX(-50%);
+               width: 100%;
+               text-align: center;
+          }
 
-               p{
-                    display: block;
-                    z-index: 2;
-                    position: absolute;
-                    left: 50%;
-                    top: 180px;
-                    transform: translateX(-50%);
-                    width: 90%;
-                    text-align: center;
-               }
+          p{
+               display: none;
+               z-index: 2;
+               position: absolute;
+               left: 50%;
+               top: 180px;
+               transform: translateX(-50%);
+               width: 90%;
+               text-align: center;
+          }
 
-               button{
-                    @include buttonSettings();
-                    display: none;
-                    font-size: 1em;
-                    bottom: 80px;
-                    width: 90%
+          button{
+               @include buttonSettings();
+               display: none;
+               font-size: 1em;
+               bottom: 80px;
+               width: 90%
+          }
+
+          canvas {
+               display: block;
+               position: absolute;
+               top: 0;
+               left: 0;
+               z-index: 0;
+          }
+
+          #drumEffect {
+               position: relative;
+               top: 0;
+               left: 0;
+               width: 100vw;
+               height: 100vh;
+               pointer-events: none;
+          }
+
+          .circleTambor {
+               position: absolute;
+               width: 100px;
+               height: 100px;
+               border-radius: 50%;
+               pointer-events: none;
+               animation: drumEffectAnim 0.5s ease-out forwards;
+          }
+
+          @keyframes drumEffectAnim {
+               0% {
+                    transform: scale(0);
+                    opacity: 1;
                }
-     
-               canvas {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: 0;
-               }
-     
-               #drumEffect {
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    width: 100vw;
-                    height: 100vh;
-                    pointer-events: none;
-               }
-     
-               .circleTambor {
-                    position: absolute;
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    pointer-events: none;
-                    animation: drumEffectAnim 0.5s ease-out forwards;
-               }
-     
-               @keyframes drumEffectAnim {
-                    0% {
-                         transform: scale(0);
-                         opacity: 1;
-                    }
-                    100% {
-                         transform: scale(3);
-                         opacity: .1;
-                    }
+               100% {
+                    transform: scale(3);
+                    opacity: .1;
                }
           }
+     }
+     
+     &#pre-page9{
+          height: 100vh;
+     }
 
      &#page9{
           display: none;
@@ -328,11 +335,11 @@ section{
                width: 90%;
 
                p{
-                    display: block;
+                    display: none;
                     font-weight: bold;
                }
                button{
-                    display: block;
+                    display: none;
                     z-index: 2;
                     position: absolute;
                     left: 50%;
@@ -352,6 +359,7 @@ section{
      display: none; //none
 
      button{
+          display: block;
           width: 25%;
           height: 100px;
 
@@ -377,9 +385,10 @@ section{
 .continue-colored-btn{
      @include coloredButtonSettings();
      display: none; //none
-     background-image: linear-gradient(to right, #ff6b6b 0%, #ff6b6b 21%, #48dbfb 29%, #48dbfb 46%, #1dd1a1 54%, #1dd1a1 71%, #feca57 79%, #feca57 100%);
+     background-image: linear-gradient(to right, #ff6b6b 0%, #ff6b6b 25%, #48dbfb 25%, #48dbfb 50%, #1dd1a1 50%, #1dd1a1 75%, #feca57 75%, #feca57 100%);
 
      button{
+          display: block;
           width: 100%;
           height: 100px;
           font-size: 2.5em;
@@ -415,7 +424,7 @@ footer{
 #footer-purple{
      @include coloredButtonSettings();
      height: 15px;
-     display: none;
+     display: flex;
 
      span{
           width: 25%;
@@ -441,7 +450,7 @@ footer{
 #footer-model{
      @include coloredButtonSettings();
      height: 15px;
-     display: none;
+     display: flex;
 
      span{
           width: 25%;
@@ -467,7 +476,7 @@ footer{
 #footer-green{
      @include coloredButtonSettings();
      height: 15px;
-     display: none;
+     display: flex;
 
      span{
           width: 25%;
@@ -493,7 +502,7 @@ footer{
 #footer-yellow{
      @include coloredButtonSettings();
      height: 15px;
-     display: none;
+     display: flex;
 
      span{
           width: 25%;
@@ -519,8 +528,8 @@ footer{
 #footer-red{
      @include coloredButtonSettings();
      height: 15px;
-     display: none;
-     border-top: .5px solid #151515;
+     display: flex;
+     // border-top: .5px solid #151515;
 
      span{
           width: 25%;
