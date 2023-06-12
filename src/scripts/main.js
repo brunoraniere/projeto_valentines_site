@@ -70,10 +70,10 @@ const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
 window.addEventListener('resize', () => {
-     let vh = window.innerHeight * 0.01;
-     document.documentElement.style.setProperty('--vh', `${vh}px`);
+     let vh = document.documentElement.clientHeight;
      canvasHeart.width = window.innerWidth;
      canvasHeart.height = window.innerHeight;
+     body.style.height = vh + 'px';
 });
 
 let countClicks = 0;
