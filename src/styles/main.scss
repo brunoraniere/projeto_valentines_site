@@ -37,9 +37,8 @@ button{
 img{
      display: none;
      width:  100%;
-     margin-top: 60px;
      border-radius: 5px;
-     margin: 65px auto;
+     margin: 38px auto;
 }
 
 .container{
@@ -52,7 +51,7 @@ img{
 
 section{
      display: none;
-     padding: 80px 0;
+     padding: 40px 0 80px 0;
      height: 100%;
 
      p{
@@ -85,18 +84,14 @@ section{
                     display: none;
                     width: 86.42px;
                     padding: 10px;
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    font-size: 2.5em;
-                    height: 63px;
+                    @include buttonSettings();
                }
 
                &#sure{
                     display: none;
                     width: 250px;
-                    font-size: 2.5em;
+                    @include buttonSettings();
+                    bottom: 50px;
                }
           }
      }
@@ -203,6 +198,10 @@ section{
                &#phrase1-page5{
                     display: none;
                }
+
+               &#phrase3-page5{
+                    padding: 0;
+               }
           }
 
           button{
@@ -212,6 +211,10 @@ section{
                &#continue-button-page5{
                     display: none;
                }
+          }
+
+          img{
+               margin: 38px auto;
           }
      }
 
@@ -224,6 +227,7 @@ section{
 
           img{
                display: none;
+               margin-top: 86px;
           }
 
           button{
@@ -241,6 +245,7 @@ section{
 
           img{
                display: none;
+               margin-top: 65px;
           }
           
           button{
@@ -320,10 +325,6 @@ section{
                }
           }
      }
-     
-     &#pre-page9{
-          height: 100vh;
-     }
 
      &#page9{
           display: none;
@@ -340,19 +341,20 @@ section{
           .container{
                position: absolute;
                left: 5%;
-               top: 160px;
+               top: 140px;
                width: 90%;
 
                p{
                     display: none;
                     font-weight: bold;
                }
+
                button{
                     display: none;
                     z-index: 2;
                     position: absolute;
                     left: 50%;
-                    top: 420px;
+                    bottom: 330px;
                     transform: translateY(30%) translateX(-50%);
                     width: 100%;
                     text-align: center;
