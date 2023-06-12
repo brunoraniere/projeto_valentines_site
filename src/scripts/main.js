@@ -152,7 +152,7 @@ yesButton.addEventListener('click', function() { //yesbutton
      yesButton.style.left = randomLeft + 'px';
      yesButton.style.bottom = randomBottom + 'px';
 
-     if(countClicks >= 1){
+     if(countClicks >= 8){
           yesButton.style.display = 'none';
           typeWriter(phrase1, 40, function(){
                typeWriter(phrase2, 40, function(){
