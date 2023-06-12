@@ -70,11 +70,11 @@ const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
 let vh = document.documentElement.clientHeight;
-body.style.height = vh + 'px';
+document.style.height = vh + 'px';
 
 window.addEventListener('resize', () => {
      vh = document.documentElement.clientHeight;
-     body.style.height = vh + 'px';
+     document.style.height = vh + 'px';
 });
 
 let countClicks = 0;
