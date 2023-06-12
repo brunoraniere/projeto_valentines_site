@@ -70,14 +70,10 @@ const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
 let vh = document.documentElement.clientHeight;
-canvasHeart.width = window.innerWidth;
-canvasHeart.height = window.innerHeight;
 body.style.height = vh + 'px';
 
 window.addEventListener('resize', () => {
-     let vh = document.documentElement.clientHeight;
-     canvasHeart.width = window.innerWidth;
-     canvasHeart.height = window.innerHeight;
+     vh = document.documentElement.clientHeight;
      body.style.height = vh + 'px';
 });
 
@@ -696,7 +692,8 @@ var canvasHeart = document.getElementById('canvasHeart');
 var context = canvasHeart.getContext('2d');
 
 // Define o tamanho do canvasHeart
-
+canvasHeart.width = window.innerWidth;
+canvasHeart.height = window.innerHeight;
 
 console.log(canvasHeart.width + ' ' + canvasHeart.height);
 
