@@ -2,7 +2,7 @@
 
 @mixin buttonSettings{
      position: absolute;
-     bottom: 0;
+     bottom: 10%;
      left: 50%;
      transform: translateX(-50%);
      font-size: 2.5em;
@@ -14,6 +14,11 @@
      left: 0;
      bottom: 0;
      width: 100%;
+}
+
+@mixin centralize{
+     left: 50%;
+     transform: translateX(-50%) translateY(-50%);
 }
 
 html{
@@ -36,9 +41,10 @@ button{
 
 img{
      display: none;
-     width:  100%;
      border-radius: 5px;
-     margin: 38px auto;
+     margin: 0px auto;
+     position: absolute;
+     @include centralize();
 }
 
 .container{
@@ -51,31 +57,45 @@ img{
 
 section{
      display: none;
-     padding: 40px 0 80px 0;
+     padding: 5% 0 10% 0;
      height: 100%;
+     top: 0;
+     left: 0;
+     position: relative;
 
      p{
           display: none; //none
-          padding-top: 25px;
+          @include centralize();
+          position: absolute;
+          width: 100%;
      }
      
      h1{
           font-size: 2em;
-          margin-bottom: 45px;
           display: none;
+          width: 100%;
+          top: 10%;
+          position: absolute;
+          @include centralize();
      }
      
      &#main{
           display: block; //block
 
           p{
+               &#phrase1 {
+                    top: 30%;
+               }
+
+               &#phrase2 {
+                    top: 43%;
+               }
+
                &#counter{
                     font-size: 1.6em;
                     display: none;
                     position: absolute;
-                    top: 60%;
-                    left: 50%;
-                    transform: translateX(-50%) translateY(-50%);
+                    top: 63%;
                }
           }
 
@@ -91,7 +111,6 @@ section{
                     display: none;
                     width: 250px;
                     @include buttonSettings();
-                    bottom: 50px;
                }
           }
      }
@@ -106,6 +125,18 @@ section{
 
           p{
                display: none;
+
+               &#phrase1-page2{
+                    top: 23%;
+               }
+               
+               &#phrase2-page2{
+                    top: 35%;
+               }
+
+               &#phrase4-page2{
+                    top: 48%;
+               }
           }
 
           button{
@@ -130,11 +161,14 @@ section{
                height: 100%;
                align-items: center;
                padding: 0 15px;
+               position: static;
 
                p{
                     padding-top: 0;
                     margin: 0;
                     display: block;
+                    position: static;
+                    transform: none;
                }
 
                &.color1{
@@ -170,17 +204,26 @@ section{
 
           p{
                color: #151515;
+
+               &#phrase1-page4{
+                    top: 6%;
+               }
+
+               &#phrase3-page4{
+                    top: 73%;
+               }
           }
 
           img{
-               height: 300px;
-               width: auto;
+               height: 35%;
+               top: 40%;
           }
 
           button{
                display: none;
                @include buttonSettings();
                color: #151515;
+               bottom: 6%;
 
                &#continue-button-page4{
                     display: none
@@ -196,16 +239,23 @@ section{
 
                &#phrase1-page5{
                     display: none;
+                    top: 12%;
+               }
+
+               &#phrase2-page5{
+                    top: 9%;
                }
 
                &#phrase3-page5{
                     padding: 0;
+                    top: 77%;
                }
           }
 
           button{
                @include buttonSettings();
                display: none;
+               bottom: 5%;
                
                &#continue-button-page5{
                     display: none;
@@ -213,7 +263,8 @@ section{
           }
 
           img{
-               margin: 38px auto;
+               top: 43%;
+               height: 50%;
           }
      }
 
@@ -222,11 +273,16 @@ section{
 
           p{
                display: none;
+
+               &#phrase1-page6{
+                    top: 12%;
+               }
           }
 
           img{
                display: none;
-               margin-top: 86px;
+               height: 50%;
+               top: 46%;
           }
 
           button{
@@ -240,40 +296,36 @@ section{
 
           p{
                display: none;
+
+               &#phrase1-page7{
+                    top: 12%;
+               }
           }
 
           img{
                display: none;
-               margin-top: 65px;
+               height: 50%;
+               top: 48%;
           }
           
           button{
                display: none;
                @include buttonSettings();
+               bottom: 8%;
           }
      }
 
      &#page8{
           display: none;
           padding: 0;
-
-          h1{
-               display: none;
-               z-index: 2;
-               position: absolute;
-               left: 50%;
-               top: 180px;
-               transform: translateY(30%) translateX(-50%);
-               width: 100%;
-               text-align: center;
-          }
+          position: static;
 
           p{
                display: none;
                z-index: 2;
                position: absolute;
                left: 50%;
-               top: 180px;
+               top: 21%;
                transform: translateX(-50%);
                width: 90%;
                text-align: center;
@@ -328,6 +380,7 @@ section{
      &#page9{
           display: none;
           padding: 0;
+          position: static;
 
           #canvasHeart {
                display: block;
@@ -339,13 +392,21 @@ section{
 
           .container{
                position: absolute;
+               top: 0;
                left: 5%;
-               top: 140px;
                width: 90%;
 
                p{
                     display: none;
                     font-weight: bold;
+
+                    &#phrase1-page9{
+                         top: 21%;
+                    }
+                    
+                    &#phrase2-page9{
+                         top: 36%;
+                    }
                }
 
                button{
@@ -353,7 +414,7 @@ section{
                     z-index: 2;
                     position: absolute;
                     left: 50%;
-                    bottom: 330px;
+                    bottom: 22%;
                     transform: translateY(30%) translateX(-50%);
                     width: 100%;
                     text-align: center;
@@ -369,25 +430,29 @@ section{
      display: none; //none
 
      button{
-          display: block;
           width: 25%;
           height: 100px;
+          position: static;
 
           &#btn-red{
                background-color: #ff6b6b;
                transition: 0.3s;
+               display: block;
           }
           &#btn-blue{
                background-color: #48dbfb;
                transition: 0.3s;
+               display: block;
           }
           &#btn-green{
                background-color: #1dd1a1;
                transition: 0.3s;
+               display: block;
           }
           &#btn-yellow{
                background-color: #feca57;
                transition: 0.3s;
+               display: block;
           }
      }
 }
@@ -395,6 +460,7 @@ section{
 .continue-colored-btn{
      @include coloredButtonSettings();
      display: none; //none
+
      background-image: linear-gradient(to right, #ff6b6b 0%, #ff6b6b 25%, #48dbfb 25%, #48dbfb 50%, #1dd1a1 50%, #1dd1a1 75%, #feca57 75%, #feca57 100%);
 
      button{
@@ -402,6 +468,7 @@ section{
           width: 100%;
           height: 100px;
           font-size: 2.5em;
+          position: static;
      }
 }
 
@@ -412,6 +479,7 @@ footer{
 
      span{
           width: 25%;
+          position: static;
 
           &.footer-red{
                background-color: #ff6b6b;
@@ -438,6 +506,8 @@ footer{
 
      span{
           width: 25%;
+          display: block;
+          position: static;
 
           &.footer-c1{
                background-color: #5810CC;
@@ -464,6 +534,7 @@ footer{
 
      span{
           width: 25%;
+          position: static;
 
           &.footer-c1{
                background-color: #7A65A6;
@@ -490,6 +561,7 @@ footer{
 
      span{
           width: 25%;
+          position: static;
 
           &.footer-c1{
                background-color: #14993C;
@@ -516,6 +588,7 @@ footer{
 
      span{
           width: 25%;
+          position: static;
 
           &.footer-c1{
                background-color: #FFDA1A;
@@ -543,6 +616,7 @@ footer{
 
      span{
           width: 25%;
+          position: static;
 
           &.footer-c1{
                background-color: #FF3333;

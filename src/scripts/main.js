@@ -84,10 +84,10 @@ window.addEventListener('resize', () => {
      html.style.width = vw + 'px';
      body.style.height = vh + 'px';
      body.style.width = vw + 'px';
-     canvasHeart.width = window.innerWidth;
-     canvasHeart.height = window.innerHeight;
-     canvas.width = window.innerWidth;
-     canvas.height = window.innerHeight;     
+     canvas.width = vw;
+     canvas.height = vh;
+     canvasHeart.width = vw;
+     canvasHeart.height = vh;
 });
 
 let countClicks = 0;
@@ -464,11 +464,15 @@ tapButtonP5.addEventListener('click', function(){
 
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
+var canvasHeart = document.getElementById('canvasHeart');
+var context = canvasHeart.getContext('2d');
 // var drumEffect = document.getElementById('drumEffect');
 
 // Define as dimensões do canvas para preencher toda a janela
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = vw;
+canvas.height = vh;
+canvasHeart.width = vw;
+canvasHeart.height = vh;
 
 // Array para armazenar os círculos desenhados na tela
 var circles = [];
@@ -692,9 +696,6 @@ for (var i = 0; i < numHearts; i++) {
      };
      hearts.push(heart);
 }
-
-var canvasHeart = document.getElementById('canvasHeart');
-var context = canvasHeart.getContext('2d');
 
 // Define o tamanho do canvasHeart
 canvasHeart.width = window.innerWidth;
