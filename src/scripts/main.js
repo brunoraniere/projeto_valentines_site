@@ -69,6 +69,12 @@ const footerGreen = document.querySelector('#footer-green');
 const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
+window.addEventListener('resize', () => {
+     let vh = window.innerHeight * 0.01;
+     document.documentElement.style.setProperty('--vh', `${vh}px`);
+     canvasHeart.width = window.innerWidth;
+     canvasHeart.height = window.innerHeight;
+});
 
 let countClicks = 0;
 
@@ -685,8 +691,7 @@ var canvasHeart = document.getElementById('canvasHeart');
 var context = canvasHeart.getContext('2d');
 
 // Define o tamanho do canvasHeart
-canvasHeart.width = window.innerWidth;
-canvasHeart.height = window.innerHeight;
+
 
 console.log(canvasHeart.width + ' ' + canvasHeart.height);
 
