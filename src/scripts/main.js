@@ -69,6 +69,11 @@ const footerGreen = document.querySelector('#footer-green');
 const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
+let vh = document.documentElement.clientHeight;
+canvasHeart.width = window.innerWidth;
+canvasHeart.height = window.innerHeight;
+body.style.height = vh + 'px';
+
 window.addEventListener('resize', () => {
      let vh = document.documentElement.clientHeight;
      canvasHeart.width = window.innerWidth;
