@@ -8,6 +8,7 @@ const contP7Button = document.querySelector('#continue-button-page7');
 const contP8Button = document.querySelector('#continue-button-page8');
 const endButton = document.querySelector('#btn-end');
 
+const html = document.querySelector('html');
 const body = document.querySelector('body');
 const containerMain = document.querySelector('.container-main');
 
@@ -70,11 +71,11 @@ const footerYellow = document.querySelector('#footer-yellow');
 const footerRed = document.querySelector('#footer-red');
 
 let vh = document.documentElement.clientHeight;
-document.style.height = vh + 'px';
+html.style.height = vh + 'px';
 
 window.addEventListener('resize', () => {
      vh = document.documentElement.clientHeight;
-     document.style.height = vh + 'px';
+     html.style.height = vh + 'px';
 });
 
 let countClicks = 0;
