@@ -20,6 +20,7 @@ const phrase1Page2 = document.querySelector('#phrase1-page2');
 const phrase2Page2 = document.querySelector('#phrase2-page2');
 const phrase3Page2 = document.querySelector('#phrase3-page2');
 const phrase4Page2 = document.querySelector('#phrase4-page2');
+const phrase1Page3 = document.querySelector('#phrase1-page3');
 const phrase1Page4 = document.querySelector('#phrase1-page4');
 const phrase3Page4 = document.querySelector('#phrase3-page4');
 const phrase1Page5 = document.querySelector('#phrase1-page5');
@@ -195,6 +196,9 @@ contP1Button.addEventListener('click', function(){
 contP2Button.addEventListener('click', function(){
      sectionPage2.style.display = 'none';
      sectionPage3.style.display = 'flex';
+     setTimeout(function(){
+          typeWriter(phrase1Page3, 20, function(){});
+     },2000);
 })
 
 contP3Button.addEventListener('click', function(){
@@ -345,6 +349,8 @@ let switchGreen = false;
 let switchYellow = false;
 
 function verifyColoredButtons(){
+     phrase1Page3.style.display = 'none';
+
      if(switchRed && switchBlue && switchGreen && switchYellow){
           divP3Button.style.display = 'block';
           coloredButtons.style.display = 'none';
