@@ -80,7 +80,7 @@ section{
      }
      
      &#main{
-          display: none; //block
+          display: block; //block
 
           p{
                &#phrase1 {
@@ -116,7 +116,7 @@ section{
      }
 
      &#page2{
-          display: block; //none
+          display: none; //none
           color: #A57AFF;
 
           h1{
@@ -140,7 +140,7 @@ section{
           }
 
           button{
-               display: block;
+               display: none;
                @include buttonSettings();
                color: #A57AFF;
           }
